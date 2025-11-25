@@ -100,6 +100,24 @@
         </div>
     </section>
 
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 id="contact-title">Me contacter</h2>
+            <p id="contact-text">Vous avez besoin de mes services ? Envoyez-moi un message et je vous répondrai
+                rapidement !</p>
+
+            <form id="contact-form">
+                <input type="text" id="first-name" name="first-name" placeholder="Prénom" required>
+                <input type="text" id="last-name" name="last-name" placeholder="Nom" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
+                <button type="submit" id="contact-btn">Envoyer</button>
+            </form>
+
+            <p id="form-status"></p>
+        </div>
+    </section>
+
     <!-- POPUP (reste inchangé, juste à coller si pas fait) -->
     <div id="popup" class="popup hidden">
         <div class="popup-content">
@@ -440,156 +458,191 @@ The bot enables reliable, fast, and massively automated reconstruction.`
         closeBtn.addEventListener("click", () => popup.classList.add("hidden"));
         popup.addEventListener("click", e => { if (e.target === popup) popup.classList.add("hidden"); });
 
-        // === Bouton langue ===
-        document.getElementById("lang-btn").addEventListener("click", () => {
-            currentLang = currentLang === "fr" ? "en" : "fr";
-            applyTranslations(currentLang);
-        });
 
         // ==== TRADUCTION ====
 
         // === LANG TRANSLATION SYSTEM ===
 
         // Textes français et anglais pour toute la page
-        const translations = {
+// === Définition des traductions ===
+const translations = {
+    fr: {
+        header_title: "Raphaël Teissier",
+        header_sub: "Développeur Python, JavaScript & Automatisation",
+        btn_view_projects: "Voir mes projets",
+        about_title: "À propos",
+        about_p1: "Développeur passionné et autodidacte, je crée depuis plusieurs années des scripts Python, des bots d'automatisation, des programmes JavaScript et des sites web complets.",
+        about_p2: "J'adore résoudre des problèmes, automatiser des tâches et concevoir des outils intelligents qui simplifient la vie de mes clients.",
+        about_p3: "Disponible, réactif et adaptable, je vous garantis un travail soigné, rapide et professionnel.",
+        portfolio_title: "Portfolio",
+        footer: "© 2025 Raphaël Teissier – Tous droits réservés",
+        projet1: "Outil intelligent de comparaison de produits",
+        projet2: "RTF → XML : Script Python",
+        projet3: "Bot de trading Telegram",
+        projet4: "Extraction d'adresses e-mail publiques",
+        projet5: "Automatisation & export Excel startups UE",
+        projet6: "Plateforme SnapScore Boost",
+        projet7: "Bot Discord rôles + tickets",
+        projet8: "Système automatisé Minecraft",
+        contact_title: "Me contacter",
+        contact_text: "Vous avez besoin de mes services ? Envoyez-moi un message et je vous répondrai rapidement !",
+        contact_firstName: "Prénom",
+        contact_lastName: "Nom",
+        contact_email: "Email",
+        contact_message: "Votre message...",
+        contact_button: "Envoyer",
+        contact_success: "Message envoyé avec succès ! ✅",
+        contact_error: "Erreur lors de l'envoi. ❌"
+    },
+    en: {
+        header_title: "Raphaël Teissier",
+        header_sub: "Python, JavaScript & Automation Developer",
+        btn_view_projects: "View my projects",
+        about_title: "About me",
+        about_p1: "Passionate and self-taught developer, I have been building Python scripts, automation bots, JavaScript programs and full websites for several years.",
+        about_p2: "I love solving problems, automating tasks and creating intelligent tools that simplify my clients' lives.",
+        about_p3: "Available, responsive and adaptable, I guarantee clean, fast and professional work.",
+        portfolio_title: "Portfolio",
+        footer: "© 2025 Raphaël Teissier – All rights reserved",
+        projet1: "Intelligent Product Comparison Tool",
+        projet2: "RTF → XML: Python script",
+        projet3: "Trading Bot for Telegram",
+        projet4: "Public Email Extraction",
+        projet5: "Automation & Excel Export for EU Startups",
+        projet6: "SnapScore Boost Platform",
+        projet7: "Discord Roles + Tickets Bot",
+        projet8: "Automated Minecraft System",
+        contact_title: "Contact me",
+        contact_text: "Do you need my services? Send me a message and I will reply quickly!",
+        contact_firstName: "First Name",
+        contact_lastName: "Last Name",
+        contact_email: "Email",
+        contact_message: "Your message...",
+        contact_button: "Send",
+        contact_success: "Message sent successfully! ✅",
+        contact_error: "Error sending message. ❌"
+    }
+};
+
+// === Fonction pour traduire tout ===
+let currentLang = "fr";
+
+function applyTranslations(lang) {
+    currentLang = lang;
+
+    // Header
+    document.querySelector("header h1").textContent = translations[lang].header_title;
+    document.querySelector("header p").textContent = translations[lang].header_sub;
+    document.querySelector(".btn").textContent = translations[lang].btn_view_projects;
+
+    // About
+    const aboutPs = document.querySelectorAll("#about p");
+    aboutPs[0].textContent = translations[lang].about_p1;
+    aboutPs[1].textContent = translations[lang].about_p2;
+    aboutPs[2].textContent = translations[lang].about_p3;
+
+    document.querySelector("#about h2").textContent = translations[lang].about_title;
+
+    // Portfolio
+    document.querySelector("#portfolio h2").textContent = translations[lang].portfolio_title;
+    for (let i = 1; i <= 8; i++) {
+        document.querySelector(`[data-project="projet${i}"] h3`).textContent = translations[lang][`projet${i}`];
+    }
+
+    // Footer
+    document.querySelector("footer p").textContent = translations[lang].footer;
+
+    // Contact
+    document.getElementById("contact-title").textContent = translations[lang].contact_title;
+    document.getElementById("contact-text").textContent = translations[lang].contact_text;
+    document.getElementById("first-name").placeholder = translations[lang].contact_firstName;
+    document.getElementById("last-name").placeholder = translations[lang].contact_lastName;
+    document.getElementById("email").placeholder = translations[lang].contact_email;
+    document.getElementById("message").placeholder = translations[lang].contact_message;
+    document.getElementById("contact-btn").textContent = translations[lang].contact_button;
+}
+
+// Bouton langue
+document.getElementById("lang-btn").addEventListener("click", () => {
+    currentLang = currentLang === "fr" ? "en" : "fr";
+    applyTranslations(currentLang);
+});
+
+// Appliquer langue par défaut
+applyTranslations(currentLang);
+
+        // Traductions FR / EN
+        const contactTranslations = {
             fr: {
-                header_title: "Raphaël Teissier",
-                header_sub: "Développeur Python, JavaScript & Automatisation",
-                btn_view_projects: "Voir mes projets",
-
-                about_title: "À propos",
-                about_p1: "Développeur passionné et autodidacte, je crée depuis plusieurs années des scripts Python, des bots d'automatisation, des programmes JavaScript et des sites web complets.",
-                about_p2: "J'adore résoudre des problèmes, automatiser des tâches et concevoir des outils intelligents qui simplifient la vie de mes clients.",
-                about_p3: "Disponible, réactif et adaptable, je vous garantis un travail soigné, rapide et professionnel.",
-                portfolio_title: "Portfolio",
-                footer: "© 2025 Raphaël Teissier – Tous droits réservés",
-
-                // Titres projets
-                projet1: "Outil intelligent de comparaison de produits",
-                projet2: "RTF → XML : Script Python",
-                projet3: "Bot de trading Telegram",
-                projet4: "Extraction d'adresses e-mail publiques",
-                projet5: "Automatisation & export Excel startups UE",
-                projet6: "Plateforme SnapScore Boost",
-                projet7: "Bot Discord rôles + tickets",
-                projet8: "Système automatisé Minecraft",
+                title: "Me contacter",
+                text: "Vous avez besoin de mes services ? Envoyez-moi un message et je vous répondrai rapidement !",
+                firstName: "Prénom",
+                lastName: "Nom",
+                email: "Email",
+                message: "Votre message...",
+                button: "Envoyer",
+                success: "Message envoyé avec succès ! ✅",
+                error: "Erreur lors de l'envoi. ❌"
             },
-
             en: {
-                header_title: "Raphaël Teissier",
-                header_sub: "Python, JavaScript & Automation Developer",
-                btn_view_projects: "View my projects",
-
-                about_title: "About me",
-                about_p1: "Passionate and self-taught developer, I have been building Python scripts, automation bots, JavaScript programs and full websites for several years.",
-                about_p2: "I love solving problems, automating tasks and creating intelligent tools that simplify my clients' lives.",
-                about_p3: "Available, responsive and adaptable, I guarantee clean, fast and professional work.",
-                portfolio_title: "Portfolio",
-                footer: "© 2025 Raphaël Teissier – All rights reserved",
-
-                projet1: "Intelligent Product Comparison Tool",
-                projet2: "RTF → XML: Python script",
-                projet3: "Trading Bot for Telegram",
-                projet4: "Public Email Extraction",
-                projet5: "Automation & Excel Export for EU Startups",
-                projet6: "SnapScore Boost Platform",
-                projet7: "Discord Roles + Tickets Bot",
-                projet8: "Automated Minecraft System",
+                title: "Contact me",
+                text: "Do you need my services? Send me a message and I will reply quickly!",
+                firstName: "First Name",
+                lastName: "Last Name",
+                email: "Email",
+                message: "Your message...",
+                button: "Send",
+                success: "Message sent successfully! ✅",
+                error: "Error sending message. ❌"
             }
         };
 
-
-        // === Fonction qui applique la traduction ===
-        function applyTranslations(lang) {
-            document.querySelector("header h1").textContent = translations[lang].header_title;
-            document.querySelector("header p").textContent = translations[lang].header_sub;
-            document.querySelector(".btn").textContent = translations[lang].btn_view_projects;
-
-            document.querySelector("#about h2").textContent = translations[lang].about_title;
-
-            const aboutPs = document.querySelectorAll("#about p");
-            aboutPs[0].textContent = translations[lang].about_p1;
-            aboutPs[1].textContent = translations[lang].about_p2;
-            aboutPs[2].textContent = translations[lang].about_p3;
-
-            document.querySelector("#portfolio h2").textContent = translations[lang].portfolio_title;
-
-            document.querySelector("footer p").textContent = translations[lang].footer;
-
-            // Titres dans les cards de projet
-            document.querySelector('[data-project="projet1"] h3').textContent = translations[lang].projet1;
-            document.querySelector('[data-project="projet2"] h3').textContent = translations[lang].projet2;
-            document.querySelector('[data-project="projet3"] h3').textContent = translations[lang].projet3;
-            document.querySelector('[data-project="projet4"] h3').textContent = translations[lang].projet4;
-            document.querySelector('[data-project="projet5"] h3').textContent = translations[lang].projet5;
-            document.querySelector('[data-project="projet6"] h3').textContent = translations[lang].projet6;
-            document.querySelector('[data-project="projet7"] h3').textContent = translations[lang].projet7;
-            document.querySelector('[data-project="projet8"] h3').textContent = translations[lang].projet8;
+        function applyContactTranslations(lang) {
+            document.getElementById("contact-title").textContent = contactTranslations[lang].title;
+            document.getElementById("contact-text").textContent = contactTranslations[lang].text;
+            document.getElementById("first-name").placeholder = contactTranslations[lang].firstName;
+            document.getElementById("last-name").placeholder = contactTranslations[lang].lastName;
+            document.getElementById("email").placeholder = contactTranslations[lang].email;
+            document.getElementById("message").placeholder = contactTranslations[lang].message;
+            document.getElementById("contact-btn").textContent = contactTranslations[lang].button;
         }
 
+        // Soumission formulaire
+const webhookURL = 'https://discord.com/api/webhooks/1442923542084849735/rvKFUbssgzUSkBlpwhTtKqpPFe1DPEHhPulvBsWUjFtNLWF0uMjp6IzrXdylZ-LTTRrl'; // ton webhook Discord
 
-        // === Bouton de changement de langue ===
-        let currentLang = "fr";
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
 
-        document.getElementById("lang-btn").addEventListener("click", () => {
-            currentLang = currentLang === "fr" ? "en" : "fr";
-            applyTranslations(currentLang);
+    // Récupération des valeurs du formulaire
+    const firstName = document.getElementById("first-name").value;
+    const lastName  = document.getElementById("last-name").value;
+    const email     = document.getElementById("email").value;
+    const message   = document.getElementById("message").value;
+
+    // Construction du message pour Discord
+    const discordMsg = {
+        content: `📩 **Nouveau message de contact**\n👤 **Prénom :** ${firstName}\n👤 **Nom :** ${lastName}\n📧 **Email :** ${email}\n💬 **Message :** ${message}`
+    };
+
+    try {
+        const res = await fetch(webhookURL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(discordMsg)
         });
 
-        // === Fonction qui applique la traduction de la page entière ===
-        function applyTranslations(lang) {
-            currentLang = lang;
-
-            // Header
-            document.querySelector("header h1").textContent = "Raphaël Teissier";
-            document.querySelector("header p").textContent = lang === "fr"
-                ? "Développeur Python, JavaScript & Automatisation"
-                : "Python, JavaScript & Automation Developer";
-            document.querySelector(".btn").textContent = lang === "fr" ? "Voir mes projets" : "View my projects";
-
-            // À propos
-            document.querySelector("#about h2").textContent = lang === "fr" ? "À propos" : "About me";
-            const aboutPs = document.querySelectorAll("#about p");
-            aboutPs[0].textContent = lang === "fr"
-                ? "Développeur passionné et autodidacte, je crée depuis plusieurs années des scripts Python, des bots d'automatisation, des programmes JavaScript et des sites web complets."
-                : "Passionate and self-taught developer, I have been building Python scripts, automation bots, JavaScript programs and full websites for several years.";
-            aboutPs[1].textContent = lang === "fr"
-                ? "J'adore résoudre des problèmes, automatiser des tâches et concevoir des outils intelligents qui simplifient la vie de mes clients."
-                : "I love solving problems, automating tasks and creating intelligent tools that simplify my clients' lives.";
-            aboutPs[2].textContent = lang === "fr"
-                ? "Disponible, réactif et adaptable à vos besoins, je vous garantis un travail soigné, rapide et professionnel."
-                : "Available, responsive and adaptable, I guarantee clean, fast and professional work.";
-
-            // Portfolio
-            document.querySelector("#portfolio h2").textContent = lang === "fr" ? "Portfolio" : "Portfolio";
-            for (let i = 1; i <= 8; i++) {
-                document.querySelector(`[data-project="projet${i}"] h3`).textContent = projects[`projet${i}`].title[lang];
-            }
-
-            // Footer
-            document.querySelector("footer p").textContent = lang === "fr"
-                ? "© 2025 Raphaël Teissier – Tous droits réservés"
-                : "© 2025 Raphaël Teissier – All rights reserved";
-
-            // Popup si ouvert
-            const activeCard = document.querySelector(".project-card.active");
-            if (activeCard) {
-                const id = activeCard.dataset.project;
-                const p = projects[id];
-                document.getElementById("popup-title").textContent = p.title[lang];
-                document.getElementById("popup-role").innerHTML = `<strong>${lang === "fr" ? "Mon rôle :" : "My role:"}</strong> ${p.role[lang]}`;
-                document.getElementById("popup-desc").textContent = p.desc[lang];
-            }
+        if (res.ok) {
+            document.getElementById("form-status").textContent = "Message envoyé avec succès ! ✅";
+            document.getElementById("contact-form").reset();
+        } else {
+            document.getElementById("form-status").textContent = "Erreur lors de l'envoi. ❌";
         }
+    } catch (err) {
+        console.error(err);
+        document.getElementById("form-status").textContent = "Erreur lors de l'envoi. ❌";
+    }
+});
 
-        // Bouton langue
-        document.getElementById("lang-btn").addEventListener("click", () => {
-            currentLang = currentLang === "fr" ? "en" : "fr";
-            applyTranslations(currentLang);
-        });
-
-        // Appliquer la langue par défaut au chargement
-        applyTranslations(currentLang);
 
     </script>
 
