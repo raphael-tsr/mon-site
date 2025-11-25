@@ -1,128 +1,598 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO pour Google -->
-    <meta name="description"
-        content="Raphaël Teissier, 17 ans, développeur web passionné, propose la création et la mise à jour gratuite de sites internet modernes et professionnels. Contactez-moi pour vos projets web.">
-    <meta name="keywords"
-        content="Développeur web, création site internet, mise à jour site, sites modernes, Raphaël Teissier">
-    <meta name="author" content="Raphaël Teissier">
-    <!-- Open Graph & Twitter Card pour affichage de la photo sur Google / réseaux -->
-    <meta property="og:image" content="https://raphael-teissier.com/logo.png">
-    <meta property="og:image:alt" content="Photo de Raphaël Teissier, développeur web">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://raphael-teissier.com/logo.png">
-
-    <title>Raphaël Teissier - Développeur Web</title>
+    <title>Raphaël Teissier - Développeur & Automatisation</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" class="icon-container" href="logo.png" image/png" />
 </head>
 
 <body>
 
-    <!-- HERO -->
     <header class="hero">
         <div class="container">
             <h1 class="typing">Raphaël Teissier</h1>
-            <p>Développeur Web passionné, 17 ans</p>
-            <a href="#contact" class="btn">Contactez-moi</a>
+            <p>Développeur Python, JavaScript & Automatisation</p>
+            <a href="#portfolio" class="btn">Voir mes projets</a>
+            <button id="lang-btn">EN / FR</button>
         </div>
     </header>
 
-    <!-- À PROPOS -->
     <section id="about" class="about">
         <div class="container">
-            <h2>À propos de moi</h2>
-            <p>Bonjour, je m'appelle Raphaël Teissier, j’ai 17 ans et je suis passionné par le développement web.
-                Je propose de créer gratuitement des sites internet ou de mettre à jour des sites existants pour
-                enrichir mon expérience et constituer un réseau.</p>
+            <h2>À propos</h2>
+            <p>
+                Développeur passionné et autodidacte, je crée depuis plusieurs années des scripts Python, des bots
+                d'automatisation, des programmes JavaScript et des sites web complets.
+                J'adore résoudre des problèmes, automatiser des tâches et concevoir des outils intelligents qui
+                simplifient la vie de mes clients.
+            </p>
+            <p>
+                Curieux et très motivé, je m'investis pleinement dans chaque projet, qu'il s'agisse d'un bot Minecraft,
+                d'un script automatisé, d'un tableau de bord ou d'un site web moderne. J'accorde une grande importance à
+                la qualité et à la clarté du code, ainsi qu'à la satisfaction client.
+            </p>
+            <p>
+                Disponible, réactif et adaptable à vos besoins, je vous garantis un travail soigné, rapide et
+                professionnel.
+                Collaborons pour donner vie à vos idées ! 🚀
+            </p>
         </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="services">
+    <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2>Mes services</h2>
-            <div class="cards">
-                <div class="card">
-                    <i class="fas fa-laptop-code fa-3x"></i>
-                    <h3>Création de sites</h3>
-                    <p>Je crée des sites modernes et adaptés à vos besoins. La seule dépense est le domaine et
-                        l'hébergement.</p>
+            <h2>Porte Feuille</h2>
+
+            <div class="portfolio-grid">
+
+                <!-- Projet 1 -->
+                <div class="project-card" data-project="projet1">
+                    <img src="img/project1/logo.png" class="project-thumb" alt="Projet 1">
+                    <h3>Outil intelligent de comparaison de produits</h3>
                 </div>
-                <div class="card">
-                    <i class="fas fa-sync-alt fa-3x"></i>
-                    <h3>Mise à jour</h3>
-                    <p>Je peux mettre à jour votre site existant gratuitement pour améliorer sa présentation et ses
-                        performances.</p>
+
+                <!-- Projet 2 -->
+                <div class="project-card" data-project="projet2">
+                    <img src="img/project2/Capture d'écran 2025-11-22 170631.png" class="project-thumb" alt="Projet 2">
+                    <h3>RTF → XML : Script Python</h3>
                 </div>
+
+                <!-- Projet 3 -->
+                <div class="project-card" data-project="projet3">
+                    <img src="img/project3/Capture d'écran 2025-11-22 121402.png" class="project-thumb" alt="Projet 3">
+                    <h3>Bot de trading Telegram</h3>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="project-card" data-project="projet4">
+                    <img src="img/project4/minia.png" class="project-thumb" alt="Projet 4">
+                    <h3>Extraction d'adresses e-mail publiques</h3>
+                </div>
+
+                <!-- Projet 5 -->
+                <div class="project-card" data-project="projet5">
+                    <img src="img/project5/databases-zeenea.jpg" class="project-thumb" alt="Projet 5">
+                    <h3>Automatisation & export Excel startups UE</h3>
+                </div>
+
+                <!-- Projet 6 -->
+                <div class="project-card" data-project="projet6">
+                    <img src="img/project6/miania.png" class="project-thumb" alt="Projet 6">
+                    <h3>Plateforme SnapScore Boost</h3>
+                </div>
+
+                <!-- Projet 7 -->
+                <div class="project-card" data-project="projet7">
+                    <img src="img/project7/minia.png" class="project-thumb" alt="Projet 7">
+                    <h3>Bot Discord rôles + tickets</h3>
+                </div>
+
+                <!-- Projet 8 -->
+                <div class="project-card" data-project="projet8">
+                    <img src="img/project8/Capture d'écran 2025-11-21 233613.png" class="project-thumb" alt="Projet 8">
+                    <h3>Système automatisé Minecraft</h3>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contactez-moi</h2>
-            <p>Email : <a href="mailto:raphael.teissier6@gmail.com">raphael.teissier6@gmail.com</a></p>
-            <p>Fiverr : <a href="https://fiverr.com/s/NNyx7rQ" target="_blank">Mon profil Fiverr</a></p>
-        </div>
-    </section>
+    <!-- POPUP (reste inchangé, juste à coller si pas fait) -->
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <div class="popup-inner">
+                <h2 id="popup-title"></h2>
+                <p id="popup-role"></p>
+                <p id="popup-desc"></p>
 
-    <!-- FOOTER -->
+                <div id="popup-images" class="popup-images"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- IMAGE VIEWER (ZOOM + NAVIGATION) -->
+    <div id="img-viewer" class="img-viewer hidden">
+        <span id="viewer-close" class="viewer-close">&times;</span>
+
+        <img id="viewer-img" class="viewer-img" src="">
+
+        <!-- Flèche gauche -->
+        <span id="viewer-prev" class="viewer-arrow left">&#10094;</span>
+
+        <!-- Flèche droite -->
+        <span id="viewer-next" class="viewer-arrow right">&#10095;</span>
+    </div>
+
     <footer>
-        <p>© 2025 Raphaël Teissier - Tous droits réservés</p>
+        <p>© 2025 Raphaël Teissier – Tous droits réservés</p>
     </footer>
 
-    <!-- SCRIPT -->
     <script>
-        // Typing effect
+        // Effet typing
         const typing = document.querySelector('.typing');
-        const text = 'Raphaël Teissier';
-        let index = 0;
+        const txt = 'Raphaël Teissier';
+        let idx = 0;
         function type() {
-            if (index < text.length) {
-                typing.textContent += text.charAt(index);
-                index++;
-                setTimeout(type, 150);
+            if (idx < txt.length) {
+                typing.textContent += txt.charAt(idx);
+                idx++;
+                setTimeout(type, 120);
             }
         }
         typing.textContent = '';
         type();
 
-        // Scroll smooth
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        // ==== DATA DES PROJETS ====
+        const projects = {
+            projet1: {
+                title: { fr: "Outil intelligent de comparaison de produits avec analyse automatisée", en: "Intelligent Product Comparison Tool with Automated Analysis" },
+                role: { fr: "Développeur Full-Stack en IA", en: "Full-Stack AI Developer" },
+                desc: {
+                    fr: `Développement d'un outil de comparaison intelligent capable d'analyser automatiquement les produits via une API, en extrayant leur marque, leur prix moyen, leurs évaluations et les produits similaires. La version de test utilise une API gratuite, tandis que la version finale exploitera l'API OpenAI (accessible via navigateur web) pour une analyse avancée, précise et en temps réel.
+
+Le projet comprend : l'automatisation, l'interface utilisateur, le nettoyage des données et la génération de fiches produits complètes. Compatible avec les plateformes e-commerce, le dropshipping et les outils d'analyse.`,
+                    en: `Development of an intelligent comparison tool that can automatically analyze products via an API, extracting brand, average price, ratings, and similar products. The test version uses a free API, while the final version will leverage OpenAI API for advanced, precise, real-time analysis.
+
+The project includes automation, user interface, data cleaning, and full product sheet generation. Compatible with e-commerce platforms, dropshipping, and analysis tools.`
+                },
+                images: ["img/project1/File Output.png", "img/project1/parfums list.png", "img/project1/CMD.png"]
+            },
+            projet2: {
+                title: { fr: "RTF → XML : Script Python pour la conversion et la structuration automatiques", en: "RTF → XML: Python Script for Automatic Conversion and Structuring" },
+                role: { fr: "Développeur Python – Conversion et structuration de RTF en XML", en: "Python Developer – RTF to XML Conversion and Structuring" },
+                desc: {
+                    fr: `Création d’un script Python automatisant la conversion de fichiers RTF en XML structuré.
+
+Fonctionnalités : nettoyage du texte, détection des chapitres/sections par expressions régulières, extraction des métadonnées, génération d’un XML lisible et hiérarchisé. Compatible avec UTF-8 et Latin-1.
+
+Contenu fourni : script Python, fichier JSON de configuration, fichier XML final prêt à l’emploi.`,
+                    en: `Creation of a Python script automating the conversion of RTF files to structured XML.
+
+Features: text cleaning, chapter/section detection via regular expressions, metadata extraction, generation of readable and hierarchical XML. Compatible with UTF-8 and Latin-1.
+
+Provided content: Python script, configuration JSON file, final ready-to-use XML file.`
+                },
+                images: ["img/project2/RTF.png", "img/project2/XML.png", "img/project2/Patterns JSON.png", "img/project2/CMD.png"]
+            },
+            projet3: {
+                title: { fr: "Bot de trading Telegram", en: "Trading Bot for Telegram" },
+                role: { fr: "Développeur Fullstack Python", en: "Fullstack Python Developer" },
+                desc: {
+                    fr: `Création d'un bot Telegram pour le suivi des cours boursiers en temps réel. 
+
+Fonctionnalités : affichage des prix actuels, variations journalières, graphiques, alertes personnalisées, boutons interactifs pour navigation rapide.
+
+Le bot utilise l’API Yahoo Finance pour obtenir des données fiables et instantanées.`,
+                    en: `Creation of a Telegram bot to track real-time stock prices.
+
+Features: current prices display, daily changes, charts, custom alerts, interactive buttons for quick navigation.
+
+The bot uses the Yahoo Finance API for reliable and instant data.`
+                },
+                images: ["img/project3/trading.png", "img/project3/terminal_bot.png", "img/project3/main.png"]
+            },
+            projet4: {
+                title: { fr: "Extraction d'adresses électroniques publiques à partir de sous-domaines (Web Scraping)", en: "Public Email Extraction from Subdomains (Web Scraping)" },
+                role: { fr: "Spécialiste du web scraping / Ingénieur en extraction de données", en: "Web Scraping Specialist / Data Extraction Engineer" },
+                desc: {
+                    fr: `Service d'extraction d'adresses e-mail publiques à partir de sous-domaines.
+
+Le script analyse toutes les pages internes, les sitemaps, les fichiers robots.txt et les redirections afin de récupérer toutes les adresses légalement disponibles. 
+
+Les résultats sont nettoyés, triés, dédupliqués et exportés dans un CSV structuré. Idéal pour la prospection B2B et l'enrichissement de bases de données.`,
+                    en: `Service to extract public email addresses from subdomains.
+
+The script scans all internal pages, sitemaps, robots.txt files, and redirects to collect all legally available addresses.
+
+Results are cleaned, sorted, deduplicated, and exported to a structured CSV. Ideal for B2B prospecting and database enrichment.`
+                },
+                images: ["img/project4/email_scraper.png", "img/project4/error.png", "img/project4/subdomains.png", "img/project4/teminal scraping.png", "img/project4/Capture d'écran 2025-11-21 181645.png"]
+            },
+            projet5: {
+                title: { fr: "Automatisation de l'enrichissement des données et exportation Excel pour les startups de l'UE", en: "Automation & Excel Export for EU Startups" },
+                role: { fr: "Développeur Python – Web Scraping & Data Automation", en: "Python Developer – Web Scraping & Data Automation" },
+                desc: {
+                    fr: `Développement d’un système complet d’enrichissement automatique des bases de données de startups européennes.
+
+Fonctionnalités :
+- extraction de données web,
+- détection automatique des e-mails et numéros de téléphone,
+- vérification des URLs,
+- récupération des sites officiels,
+- génération d’un fichier Excel formaté.
+
+Le projet utilise : requests, BeautifulSoup, pandas, openpyxl.`,
+                    en: `Development of a complete system for automatic enrichment of European startup databases.
+
+Features:
+- Web data extraction,
+- Automatic detection of emails and phone numbers,
+- URL verification,
+- Retrieval of official websites,
+- Generation of formatted Excel file.
+
+The project uses: requests, BeautifulSoup, pandas, openpyxl.`
+                },
+                images: ["img/project5/cmd.png", "img/project5/json.png", "img/project5/ste.png", "img/project5/exel.png", "img/project5/exel verifié.png"]
+            },
+            projet6: {
+                title: { fr: "Site web SnapScore Boost avec commandes Discord automatisées", en: "SnapScore Boost Website with Automated Discord Commands" },
+                role: { fr: "Développeur web front-end & intégration API Discord", en: "Front-end Web Developer & Discord API Integration" },
+                desc: {
+                    fr: `Développement d'une plateforme complète de vente de comptes Snapchat et de boosts SnapScore. 
+
+Fonctionnalités :
+- calcul dynamique du prix selon le score,
+- envoi automatique des commandes via webhook Discord,
+- interface moderne, fluide, responsive et optimisée mobile,
+- pop-ups animés et transitions.
+
+Technos : HTML, CSS, JavaScript, API Discord.`,
+                    en: `Development of a full platform for selling Snapchat accounts and SnapScore boosts.
+
+Features:
+- Dynamic price calculation based on score,
+- Automatic order sending via Discord webhook,
+- Modern, smooth, responsive, mobile-optimized interface,
+- Animated popups and transitions.
+
+Tech: HTML, CSS, JavaScript, Discord API.`
+                },
+                images: ["img/project6/site accueil.png", "img/project6/boost.png", "img/project6/succés.png", "/img/project6/compte.png", "img/project6/saisie de pseudo.png", "img/project6/discord.png"]
+            },
+            projet7: {
+                title: { fr: "Bot d'automatisation des rôles et tickets Discord", en: "Discord Roles & Tickets Automation Bot" },
+                role: { fr: "Développeur de bots Discord (Node.js + Discord.js)", en: "Discord Bot Developer (Node.js + Discord.js)" },
+                desc: {
+                    fr: `Développement d'un bot Discord avancé permettant :
+- attribution automatique de rôles via menu interactif,
+- création de tickets privés,
+- gestion des demandes via boutons (accepter / refuser),
+- suppression automatique des salons,
+- permissions personnalisées.
+
+Le bot utilise Discord.js v14 et un système complet de gestion des interactions.`,
+                    en: `Development of an advanced Discord bot allowing:
+- Automatic role assignment via interactive menu,
+- Private ticket creation,
+- Request handling via buttons (accept / reject),
+- Automatic channel deletion,
+- Custom permissions.
+
+The bot uses Discord.js v14 and a full interaction management system.`
+                },
+                images: ["img/project7/bot.png", "img/project7/discord.png", "img/project7/cmd.png", "img/project7/index.png", "img/project7/package.png"]
+            },
+            projet8: {
+                title: { fr: "Système de construction automatisé pour Minecraft", en: "Automated Minecraft Construction System" },
+                role: { fr: "Développeur Node.js – Automatisation & bots de construction Minecraft", en: "Node.js Developer – Minecraft Automation & Construction Bots" },
+                desc: {
+                    fr: `Création d’un système d’automatisation complet basé sur Mineflayer (Node.js). 
+
+Fonctionnalités :
+- analyse 3D d’une zone,
+- génération d’un fichier JSON optimisé,
+- calcul intelligent de placement de blocs,
+- exécution automatique de milliers de /setblock pour reconstruire une structure complète.
+
+Le bot permet une reconstruction fiable, rapide et massivement automatisée.`,
+                    en: `Creation of a full automation system based on Mineflayer (Node.js).
+
+Features:
+- 3D zone analysis,
+- Optimized JSON file generation,
+- Intelligent block placement calculation,
+- Automatic execution of thousands of /setblock commands to rebuild a complete structure.
+
+The bot enables reliable, fast, and massively automated reconstruction.`
+                },
+                images: ["img/project8/ANALYZE_AREA.png", "img/project8/CONFIG.png", "img/project8/block JSON.png"]
+            }
+        };
+
+
+
+
+        // ==== POPUP LOGIC ====
+        const popup = document.getElementById("popup");
+        const closeBtn = document.querySelector(".popup-close");
+
+
+        // OUVERTURE POPUP
+        document.querySelectorAll(".project-card").forEach(card => {
+            card.addEventListener("click", () => {
+                const id = card.dataset.project;
+                const p = projects[id];
+
+
+                document.getElementById("popup-title").textContent = p.title;
+                document.getElementById("popup-role").innerHTML = `<strong>Mon rôle :</strong> ${p.role}`;
+                document.getElementById("popup-desc").textContent = p.desc;
+
+
+                // Images
+                const imgContainer = document.querySelector('.popup-images');
+                imgContainer.innerHTML = '';
+                p.images.forEach(src => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.classList.add('popup-img');
+                    imgContainer.appendChild(img);
+                });
+
+
+                popup.classList.remove("hidden");
             });
         });
 
-        // Formulaire
-        document.getElementById("contact-form").addEventListener("submit", async function (e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
 
-            try {
-                const response = await fetch('/send', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-                const text = await response.text();
-                alert(text);
-                this.reset();
-            } catch (err) {
-                console.error(err);
-                alert("Erreur lors de l'envoi. Vérifie ton serveur.");
+        // FERMETURE
+        closeBtn.addEventListener("click", () => popup.classList.add("hidden"));
+        popup.addEventListener("click", e => {
+            if (e.target === popup) popup.classList.add("hidden");
+        });
+
+
+        let currentImgIndex = 0;
+        let currentImgList = [];
+
+        // Quand on clique sur une image dans le popup
+        document.getElementById("popup-images").addEventListener("click", e => {
+            if (e.target.classList.contains("popup-img")) {
+
+                currentImgList = [...document.querySelectorAll(".popup-img")].map(img => img.src);
+                currentImgIndex = currentImgList.indexOf(e.target.src);
+
+                showImageViewer();
             }
         });
+
+        function showImageViewer() {
+            document.getElementById("viewer-img").src = currentImgList[currentImgIndex];
+            document.getElementById("img-viewer").classList.remove("hidden");
+        }
+
+        // Fermer le zoom
+        document.getElementById("viewer-close").addEventListener("click", () => {
+            document.getElementById("img-viewer").classList.add("hidden");
+        });
+
+        // Naviguer — Suivant
+        document.getElementById("viewer-next").addEventListener("click", () => {
+            currentImgIndex = (currentImgIndex + 1) % currentImgList.length;
+            showImageViewer();
+        });
+
+        // Naviguer — Précédent
+        document.getElementById("viewer-prev").addEventListener("click", () => {
+            currentImgIndex = (currentImgIndex - 1 + currentImgList.length) % currentImgList.length;
+            showImageViewer();
+        });
+
+        // Navigation via clavier
+        document.addEventListener("keydown", e => {
+            if (document.getElementById("img-viewer").classList.contains("hidden")) return;
+
+            if (e.key === "ArrowRight") {
+                currentImgIndex = (currentImgIndex + 1) % currentImgList.length;
+                showImageViewer();
+            }
+
+            if (e.key === "ArrowLeft") {
+                currentImgIndex = (currentImgIndex - 1 + currentImgList.length) % currentImgList.length;
+                showImageViewer();
+            }
+
+            if (e.key === "Escape") {
+                document.getElementById("img-viewer").classList.add("hidden");
+            }
+        });
+
+        document.querySelectorAll(".project-card").forEach(card => {
+            card.addEventListener("click", () => {
+                document.querySelectorAll(".project-card").forEach(c => c.classList.remove("active"));
+                card.classList.add("active");
+
+                const id = card.dataset.project;
+                const p = projects[id];
+                document.getElementById("popup-title").textContent = p.title[currentLang];
+                document.getElementById("popup-role").innerHTML = `<strong>${currentLang === "fr" ? "Mon rôle :" : "My role:"}</strong> ${p.role[currentLang]}`;
+                document.getElementById("popup-desc").textContent = p.desc[currentLang];
+
+                const imgContainer = document.querySelector(".popup-images");
+                imgContainer.innerHTML = "";
+                p.images.forEach(src => {
+                    const img = document.createElement("img");
+                    img.src = src;
+                    img.classList.add("popup-img");
+                    imgContainer.appendChild(img);
+                });
+
+                popup.classList.remove("hidden");
+            });
+        });
+
+        // Fermeture popup
+        closeBtn.addEventListener("click", () => popup.classList.add("hidden"));
+        popup.addEventListener("click", e => { if (e.target === popup) popup.classList.add("hidden"); });
+
+        // === Bouton langue ===
+        document.getElementById("lang-btn").addEventListener("click", () => {
+            currentLang = currentLang === "fr" ? "en" : "fr";
+            applyTranslations(currentLang);
+        });
+
+        // ==== TRADUCTION ====
+
+        // === LANG TRANSLATION SYSTEM ===
+
+        // Textes français et anglais pour toute la page
+        const translations = {
+            fr: {
+                header_title: "Raphaël Teissier",
+                header_sub: "Développeur Python, JavaScript & Automatisation",
+                btn_view_projects: "Voir mes projets",
+
+                about_title: "À propos",
+                about_p1: "Développeur passionné et autodidacte, je crée depuis plusieurs années des scripts Python, des bots d'automatisation, des programmes JavaScript et des sites web complets.",
+                about_p2: "J'adore résoudre des problèmes, automatiser des tâches et concevoir des outils intelligents qui simplifient la vie de mes clients.",
+                about_p3: "Disponible, réactif et adaptable, je vous garantis un travail soigné, rapide et professionnel.",
+                portfolio_title: "Portfolio",
+                footer: "© 2025 Raphaël Teissier – Tous droits réservés",
+
+                // Titres projets
+                projet1: "Outil intelligent de comparaison de produits",
+                projet2: "RTF → XML : Script Python",
+                projet3: "Bot de trading Telegram",
+                projet4: "Extraction d'adresses e-mail publiques",
+                projet5: "Automatisation & export Excel startups UE",
+                projet6: "Plateforme SnapScore Boost",
+                projet7: "Bot Discord rôles + tickets",
+                projet8: "Système automatisé Minecraft",
+            },
+
+            en: {
+                header_title: "Raphaël Teissier",
+                header_sub: "Python, JavaScript & Automation Developer",
+                btn_view_projects: "View my projects",
+
+                about_title: "About me",
+                about_p1: "Passionate and self-taught developer, I have been building Python scripts, automation bots, JavaScript programs and full websites for several years.",
+                about_p2: "I love solving problems, automating tasks and creating intelligent tools that simplify my clients' lives.",
+                about_p3: "Available, responsive and adaptable, I guarantee clean, fast and professional work.",
+                portfolio_title: "Portfolio",
+                footer: "© 2025 Raphaël Teissier – All rights reserved",
+
+                projet1: "Intelligent Product Comparison Tool",
+                projet2: "RTF → XML: Python script",
+                projet3: "Trading Bot for Telegram",
+                projet4: "Public Email Extraction",
+                projet5: "Automation & Excel Export for EU Startups",
+                projet6: "SnapScore Boost Platform",
+                projet7: "Discord Roles + Tickets Bot",
+                projet8: "Automated Minecraft System",
+            }
+        };
+
+
+        // === Fonction qui applique la traduction ===
+        function applyTranslations(lang) {
+            document.querySelector("header h1").textContent = translations[lang].header_title;
+            document.querySelector("header p").textContent = translations[lang].header_sub;
+            document.querySelector(".btn").textContent = translations[lang].btn_view_projects;
+
+            document.querySelector("#about h2").textContent = translations[lang].about_title;
+
+            const aboutPs = document.querySelectorAll("#about p");
+            aboutPs[0].textContent = translations[lang].about_p1;
+            aboutPs[1].textContent = translations[lang].about_p2;
+            aboutPs[2].textContent = translations[lang].about_p3;
+
+            document.querySelector("#portfolio h2").textContent = translations[lang].portfolio_title;
+
+            document.querySelector("footer p").textContent = translations[lang].footer;
+
+            // Titres dans les cards de projet
+            document.querySelector('[data-project="projet1"] h3').textContent = translations[lang].projet1;
+            document.querySelector('[data-project="projet2"] h3').textContent = translations[lang].projet2;
+            document.querySelector('[data-project="projet3"] h3').textContent = translations[lang].projet3;
+            document.querySelector('[data-project="projet4"] h3').textContent = translations[lang].projet4;
+            document.querySelector('[data-project="projet5"] h3').textContent = translations[lang].projet5;
+            document.querySelector('[data-project="projet6"] h3').textContent = translations[lang].projet6;
+            document.querySelector('[data-project="projet7"] h3').textContent = translations[lang].projet7;
+            document.querySelector('[data-project="projet8"] h3').textContent = translations[lang].projet8;
+        }
+
+
+        // === Bouton de changement de langue ===
+        let currentLang = "fr";
+
+        document.getElementById("lang-btn").addEventListener("click", () => {
+            currentLang = currentLang === "fr" ? "en" : "fr";
+            applyTranslations(currentLang);
+        });
+
+        // === Fonction qui applique la traduction de la page entière ===
+        function applyTranslations(lang) {
+            currentLang = lang;
+
+            // Header
+            document.querySelector("header h1").textContent = "Raphaël Teissier";
+            document.querySelector("header p").textContent = lang === "fr"
+                ? "Développeur Python, JavaScript & Automatisation"
+                : "Python, JavaScript & Automation Developer";
+            document.querySelector(".btn").textContent = lang === "fr" ? "Voir mes projets" : "View my projects";
+
+            // À propos
+            document.querySelector("#about h2").textContent = lang === "fr" ? "À propos" : "About me";
+            const aboutPs = document.querySelectorAll("#about p");
+            aboutPs[0].textContent = lang === "fr"
+                ? "Développeur passionné et autodidacte, je crée depuis plusieurs années des scripts Python, des bots d'automatisation, des programmes JavaScript et des sites web complets."
+                : "Passionate and self-taught developer, I have been building Python scripts, automation bots, JavaScript programs and full websites for several years.";
+            aboutPs[1].textContent = lang === "fr"
+                ? "J'adore résoudre des problèmes, automatiser des tâches et concevoir des outils intelligents qui simplifient la vie de mes clients."
+                : "I love solving problems, automating tasks and creating intelligent tools that simplify my clients' lives.";
+            aboutPs[2].textContent = lang === "fr"
+                ? "Disponible, réactif et adaptable à vos besoins, je vous garantis un travail soigné, rapide et professionnel."
+                : "Available, responsive and adaptable, I guarantee clean, fast and professional work.";
+
+            // Portfolio
+            document.querySelector("#portfolio h2").textContent = lang === "fr" ? "Portfolio" : "Portfolio";
+            for (let i = 1; i <= 8; i++) {
+                document.querySelector(`[data-project="projet${i}"] h3`).textContent = projects[`projet${i}`].title[lang];
+            }
+
+            // Footer
+            document.querySelector("footer p").textContent = lang === "fr"
+                ? "© 2025 Raphaël Teissier – Tous droits réservés"
+                : "© 2025 Raphaël Teissier – All rights reserved";
+
+            // Popup si ouvert
+            const activeCard = document.querySelector(".project-card.active");
+            if (activeCard) {
+                const id = activeCard.dataset.project;
+                const p = projects[id];
+                document.getElementById("popup-title").textContent = p.title[lang];
+                document.getElementById("popup-role").innerHTML = `<strong>${lang === "fr" ? "Mon rôle :" : "My role:"}</strong> ${p.role[lang]}`;
+                document.getElementById("popup-desc").textContent = p.desc[lang];
+            }
+        }
+
+        // Bouton langue
+        document.getElementById("lang-btn").addEventListener("click", () => {
+            currentLang = currentLang === "fr" ? "en" : "fr";
+            applyTranslations(currentLang);
+        });
+
+        // Appliquer la langue par défaut au chargement
+        applyTranslations(currentLang);
+
     </script>
+
 </body>
 
 </html>
