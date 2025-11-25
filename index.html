@@ -150,19 +150,6 @@
     </footer>
 
     <script>
-        // Effet typing
-        const typing = document.querySelector('.typing');
-        const txt = 'Raphaël Teissier';
-        let idx = 0;
-        function type() {
-            if (idx < txt.length) {
-                typing.textContent += txt.charAt(idx);
-                idx++;
-                setTimeout(type, 120);
-            }
-        }
-        typing.textContent = '';
-        type();
 
         // ==== DATA DES PROJETS ====
         const projects = {
